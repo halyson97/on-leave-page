@@ -7,12 +7,18 @@ export default class OnLeaveIntent {
   }
 
   init = () => {
-    window.setTimeout(this.handleMouseOut, this.delay)
+    this.timer = window.setTimeout(this.handleMouseOut, this.delay)
+  }
+
+  destroy = () => {
+    clearTimeout(this.timer)
+    document.removeEventListener('mouseout', this.checkOutOfBounds)
   }
 
   checkOutOfBounds = (e) => {
     if (!e.relatedTarget) {
       this.callback()
+      this.destroy()
     }
   }
 

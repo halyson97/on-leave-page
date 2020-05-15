@@ -30,4 +30,11 @@ describe('OnLeaveIntent', () => {
     document.dispatchEvent(new MouseEvent('mouseout', { relatedTarget: null }))
     expect(callback).not.toHaveBeenCalled()
   })
+
+  it('chamar callback apenas uma vez', () => {
+    jest.advanceTimersByTime(delay)
+    document.dispatchEvent(new MouseEvent('mouseout', { relatedTarget: null }))
+    document.dispatchEvent(new MouseEvent('mouseout', { relatedTarget: null }))
+    expect(callback).toHaveBeenCalledTimes(1)
+  })
 })
