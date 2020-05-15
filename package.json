@@ -6,7 +6,8 @@
   "author": "Halyson <halyson97@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
