@@ -17,5 +17,8 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
+  },
+  devServer: {
+    contentBase: [path.join(__dirname, 'example'), path.join(__dirname, 'lib')]
   }
 }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On Leave Intent</title>
+</head>
+<body>
+
+    <h1>Espere 3s para sair</h1>
+
+    <script src="on-leave-intent.min.js"></script>
+
+    <script>
+
+        function dontleaveme(){
+            alert('Nao me deixe, por favor')
+        }
+
+        const onLeaveIntent = new OnLeaveIntent(dontleaveme, 3000)
+    </script>
+    
+</body>
+</html>
